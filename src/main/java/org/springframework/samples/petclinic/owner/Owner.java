@@ -50,15 +50,15 @@ import jakarta.validation.constraints.NotBlank;
 public class Owner extends Person {
 
 	@Column(name = "address")
-	@NotBlank
+	@NotBlank(message="{address.blank}")
 	private String address;
 
 	@Column(name = "city")
-	@NotBlank
+	@NotBlank(message="{city.blank}")
 	private String city;
-
+	
 	@Column(name = "telephone")
-	@NotBlank
+	@NotBlank(message = "{telephone.blank}")
 	@Pattern(regexp = "\\d{10}", message = "{telephone.invalid}")
 	private String telephone;
 

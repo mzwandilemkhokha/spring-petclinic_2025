@@ -111,7 +111,7 @@ class PetController {
 
 		LocalDate currentDate = LocalDate.now();
 		if (pet.getBirthDate() != null && pet.getBirthDate().isAfter(currentDate)) {
-			result.rejectValue("birthDate", "typeMismatch.birthDate");
+			result.rejectValue("birthDate", "birthDate.null", "Birth date cannot be in the future");
 		}
 
 		if (result.hasErrors()) {
